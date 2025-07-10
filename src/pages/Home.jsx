@@ -151,7 +151,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+{/*       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
         {filteredCoins.map((coin) => (
           <CryptoCard
             key={coin.id}
@@ -159,12 +159,12 @@ const Home = () => {
             onChartClick={() => setSelectedCoin(coin.id)}
           />
         ))}
-      </div>
+      </div> */}
       {loading ? (
         <Spinner />
       ) : (
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {coins.map((coin) => (
+          {filteredCoins.map((coin) => (
             <CryptoCard key={coin.id} coin={coin} onChartClick={() => setSelectedCoin(coin.id)} />
           ))}
         </div>

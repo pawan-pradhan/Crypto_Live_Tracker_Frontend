@@ -126,7 +126,7 @@ const Home = () => {
         ⏱️ Next refresh in: {Math.floor(timeRemaining / 60)}m {timeRemaining % 60}s
         </p>
         <div className="w-[63%]">
-            <p className="text-white justify-self-end">Dashboard  data auto update in every 30 min...</p>
+            <p className="text-white justify-self-end">Dashboard  data auto update in every 10 min...</p>
         </div>
         <div className="flex  gap-2 ml-[68px] ">
             <select

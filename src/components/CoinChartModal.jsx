@@ -28,7 +28,7 @@ const CoinChartModal = ({ coinId, isOpen, onClose }) => {
     if (isOpen && coinId) {
       setLoading(true);
       axios
-        .post(`${API_URL}/history/${coinId}`)
+        .get(`${API_URL}/history/${coinId}`)
         .then((res) => {
           setHistory(res.data);
           setLoading(false);

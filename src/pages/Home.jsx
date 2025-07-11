@@ -20,7 +20,7 @@ const Home = () => {
   const [filterType, setFilterType] = useState("");
   const [sortType, setSortType] = useState("");
 
-  const REFRESH_INTERVAL = 30 * 60; 
+  const REFRESH_INTERVAL = 10 * 60; 
 
   const [timeRemaining, setTimeRemaining] = useState(REFRESH_INTERVAL);
 
@@ -66,7 +66,7 @@ const Home = () => {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 30 * 60 * 1000);
+    const interval = setInterval(fetchData, 10 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 

@@ -14,7 +14,7 @@ const CoinDetails = () => {
 
   useEffect(() => {
     axios
-      .post(`${API_URL}/history/${id}`)
+      .get(`${API_URL}/history/${id}`)
       .then((res) => setHistory(res.data))
       .catch((err) => console.error("Error fetching history", err));
   }, [id]);

@@ -102,12 +102,12 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+    <div className="min-h-screen bg-gray-900 p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center  text-white">
         Top 10 Cryptocurrencies
       </h1>
       {lastUpdated && (
-        <p className="text-center text-sm text-gray-500 mt-2 dark:text-gray-400">
+        <p className="text-center text-sm text-gray-500 mt-2 ">
           Last updated: {new Date(lastUpdated).toLocaleString()}
         </p>
       )}
@@ -118,11 +118,11 @@ const Home = () => {
           placeholder="Search by name or symbol..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full max-w-md px-4 py-2 rounded-md border dark:bg-gray-800 dark:border-gray-700 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full max-w-md px-4 py-2 rounded-md border bg-gray-800 border-gray-700 text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
       <div className="flex  gap-4 mb-2 ">
-        <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-4">
+        <p className="text-center text-sm text-white  mb-4">
         ⏱️ Next refresh in: {Math.floor(timeRemaining / 60)}m {timeRemaining % 60}s
         </p>
         <div className="w-[63%]">
@@ -130,7 +130,7 @@ const Home = () => {
         </div>
         <div className="flex  gap-2 ml-[68px] ">
             <select
-                className="pl-2 py-2 border rounded dark:bg-gray-800 dark:border-gray-700 dark:text-white ml-20"
+                className="pl-2 py-2 border rounded bg-gray-800 border-gray-700 text-white ml-20"
                 onChange={(e) => setFilterType(e.target.value)}
                 >
                 <option value="">All</option>
@@ -140,7 +140,7 @@ const Home = () => {
                 <select
                 value={sortType}
                 onChange={(e) => setSortType(e.target.value)}
-                className="w-full sm:w-48 px-4 py-2 rounded-md border dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                className="w-full sm:w-48 px-4 py-2 rounded-md border bg-gray-800 border-gray-700 text-white"
                 >
                 <option value="">Sort By</option>
                 <option value="price-desc">Price: High → Low</option>
@@ -151,7 +151,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+      {/* <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
         {filteredCoins.map((coin) => (
           <CryptoCard
             key={coin.id}
@@ -159,12 +159,12 @@ const Home = () => {
             onChartClick={() => setSelectedCoin(coin.id)}
           />
         ))}
-      </div>
+      </div> */}
       {loading ? (
         <Spinner />
       ) : (
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {coins.map((coin) => (
+          {filteredCoins.map((coin) => (
             <CryptoCard key={coin.id} coin={coin} onChartClick={() => setSelectedCoin(coin.id)} />
           ))}
         </div>

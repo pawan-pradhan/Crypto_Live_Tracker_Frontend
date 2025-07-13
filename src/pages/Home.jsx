@@ -106,11 +106,11 @@ const Home = () => {
       <h1 className="text-3xl font-bold mb-6 text-center  text-white">
         Top 10 Cryptocurrencies
       </h1>
-      {lastUpdated && (
+{/*       {lastUpdated && (
         <p className="text-center text-sm text-gray-500 mt-2 ">
           Last updated: {new Date(lastUpdated).toLocaleString()}
         </p>
-      )}
+      )} */}
 
       <div className="flex justify-center mb-6">
         <input
@@ -121,13 +121,13 @@ const Home = () => {
           className="w-full max-w-md px-4 py-2 rounded-md border bg-gray-800 border-gray-700 text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
-      <div className="flex  gap-4 mb-2 ">
-        <p className="text-center text-sm text-white  mb-4">
+      <div className="flex justify-end gap-4 mb-2 ">
+{/*         <p className="text-center text-sm text-white  mb-4">
         ⏱️ Next refresh in: {Math.floor(timeRemaining / 60)}m {timeRemaining % 60}s
         </p>
         <div className="w-[63%]">
             <p className="text-white justify-self-end">Dashboard  data auto update in every 30 min...</p>
-        </div>
+        </div> */}
         <div className="flex  gap-2 ml-[68px] ">
             <select
                 className="pl-2 py-2 border rounded bg-gray-800 border-gray-700 text-white ml-20"

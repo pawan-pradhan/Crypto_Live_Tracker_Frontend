@@ -17,7 +17,7 @@ const Home = () => {
   const [filterType, setFilterType] = useState("");
   const [sortType, setSortType] = useState("");
 
-  const REFRESH_INTERVAL = 30 * 60;
+  const REFRESH_INTERVAL = 5 * 60;
   const [timeRemaining, setTimeRemaining] = useState(REFRESH_INTERVAL);
 
   // 👇 Countdown Timer

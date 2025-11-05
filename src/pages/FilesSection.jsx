@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function FilesSection() {
   const [file, setFile] = useState(null);
   const [files, setFiles] = useState([]);
@@ -60,7 +62,7 @@ if (!isValidExt) {
       const fileName = file.name;
 
       // 🔸 Step 2: Save file info (name + URL) in MongoDB via backend
-      await axios.post("http://localhost:5000/api/files/save", {
+      await axios.post(`${API_URL}/api/files/save`, {
         name: fileName,
         url: fileUrl,
       });

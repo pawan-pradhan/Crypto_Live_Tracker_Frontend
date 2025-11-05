@@ -62,7 +62,7 @@ if (!isValidExt) {
       const fileName = file.name;
 
       // 🔸 Step 2: Save file info (name + URL) in MongoDB via backend
-      await axios.post(`${API_URL}files/save`, {
+      await axios.post(`${API_URL}/files/save`, {
         name: fileName,
         url: fileUrl,
       });

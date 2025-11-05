@@ -12,7 +12,7 @@ export default function FilesSection() {
   // 🔹 1. Fetch all files from backend
   const fetchFiles = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/files");
+      const res = await axios.get(`${API_URL}/files`);
       setFiles(res.data);
     } catch (err) {
       console.error("Failed to fetch files:", err);
@@ -62,7 +62,7 @@ if (!isValidExt) {
       const fileName = file.name;
 
       // 🔸 Step 2: Save file info (name + URL) in MongoDB via backend
-      await axios.post(`${API_URL}/api/files/save`, {
+      await axios.post(`${API_URL}files/save`, {
         name: fileName,
         url: fileUrl,
       });
